@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Men's Collection - Trendy Threads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #fafafa;
+      color: #222;
+    }
+    header {
+      background-color: #fff;
+      padding: 20px 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #111;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #c2185b;
+    }
+    .navbar {
+      display: flex;
+      gap: 20px;
+      padding: 15px 20px;
+      background: #c2185b;
+      color: white;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    .section-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin: 40px 0 20px;
+    }
+    .products {
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+    .product {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+      max-height: 320px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .product h3 {
+      margin: 20px 0 10px;
+      font-size: 1.4rem;
+      color: #111;
+    }
+    .product p {
+      color: #666;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+    .product button {
+      background-color: #c2185b;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .product button:hover {
+      background-color: #ad1457;
+    }
+    footer {
+      background-color: #111;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Trendy Threads</div>
+    <nav>
+      <div id="cart-icon" onclick="window.location.href='cart.html'" style="cursor: pointer;">🛒 <span id="cart-count">0</span></div>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="navbar">
+    <a href="new-arrivals.html">New Arrivals</a>
+    <a href="men.html">Men</a>
+    <a href="women.html">Women</a>
+    <a href="accessories.html">Accessories</a>
+  </div>
+
+  <h2 class="section-title">Men's Collection</h2>
+
+  <section class="products">
+    <div class="product">
+      <img src="designer blazer.jpeg" alt="Designer Blazer">
+      <h3>Designer Blazer</h3>
+      <p>₹10,499</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="graphic t shirt.jpeg" alt="Graphic T-Shirt">
+      <h3>Graphic T-Shirt</h3>
+      <p>₹2,299</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="jacket.jpeg" alt="Classic Denim Jacket">
+      <h3>Classic Denim Jacket</h3>
+      <p>₹4,799</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="casualblazer.jpeg" alt="Casual Blazer" />
+        <h3>Casual Blazer</h3>
+        <p>₹6,799</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="cashmerepullovers.jpeg" alt="Cashmere Pullover" />
+      <h3>Cashmere Pullover</h3>
+      <p>₹5,499</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  
+  <div class="product">
+    <img src="silkshort.jpeg" alt="Silk Shirt" />
+    <h3>Silk Shirt</h3>
+    <p>₹4,299</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+  
+  <div class="product">
+    <img src="moderncargopants.jpeg" alt="Modern Cargo Pants" />
+    <h3>Modern Cargo Pants</h3>
+    <p>₹3,999</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+  
+  <div class="product">
+    <img src="quiltedparka.jpeg" alt="Quilted Parka" />
+    <h3>Quilted Parka</h3>
+    <p>₹9,299</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+  
+  <div class="product">
+    <img src="structuredcoat.jpeg" alt="Structured Coat" />
+    <h3>Structured Coat</h3>
+    <p>₹10,899</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+  
+  <div class="product">
+    <img src="turtlenecksweater.jpeg" alt="Turtleneck Sweater" />
+    <h3>Turtleneck Sweater</h3>
+    <p>₹4,499</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+  
+ 
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Trendy Threads. Crafted with elegance for the fashion-forward.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("active");
+    }
+  
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
+    function updateCartCount() {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.getElementById("cart-count").textContent = totalItems;
+    }
+  
+    document.querySelectorAll(".product").forEach(card => {
+      const name = card.querySelector("h3")?.textContent.trim();
+      const priceText = card.querySelector("p")?.textContent.replace(/[₹,]/g, "").trim();
+      const price = parseInt(priceText, 10);
+      const image = card.querySelector("img")?.getAttribute("src");
+      const button = card.querySelector("button.add-to-cart");
+      const quantitySelect = card.querySelector(".quantity-select");
+  
+      if (name && !isNaN(price) && image && button) {
+        button.addEventListener("click", () => {
+          const selectedQty = quantitySelect ? parseInt(quantitySelect.value, 10) : 1;
+          const existingProduct = cart.find(item => item.name === name);
+  
+          if (existingProduct) {
+            existingProduct.quantity += selectedQty;
+          } else {
+            cart.push({ name, price, image, quantity: selectedQty });
+          }
+  
+          localStorage.setItem("cart", JSON.stringify(cart));
+          updateCartCount();
+  
+          // Theme-colored feedback
+          button.innerText = "✔ Added!";
+          button.style.backgroundColor = "#f8bbd0"; // Light pink matching theme
+          button.style.color = "#c2185b";
+          button.style.cursor = "default";
+  
+          setTimeout(() => {
+            button.innerText = "Add to Cart";
+            button.style.backgroundColor = "#c2185b";
+            button.style.color = "#fff";
+            button.style.cursor = "pointer";
+          }, 1500);
+        });
+      }
+    });
+  
+    updateCartCount();
+  </script>
+  
+  
+</body>
+</html>
