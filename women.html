@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Women's Collection - Trendy Threads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #fafafa;
+      color: #222;
+    }
+
+    header {
+      background: #fff;
+      padding: 20px 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #111;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #c2185b;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .navbar {
+      background-color: #c2185b;
+      padding: 15px 20px;
+      text-align: center;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-family: 'Playfair Display', serif;
+      margin: 60px 20px 20px;
+      color:#000;
+    }
+
+    .products {
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .product {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .product img {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      margin: 20px 0 10px;
+      font-size: 1.4rem;
+      color: #111;
+    }
+
+    .product p {
+      color: #666;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .product button {
+      background-color: #c2185b;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .product button:hover {
+      background-color: #ad1457;
+    }
+
+    footer {
+      background-color: #111;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .logo { font-size: 1.5rem; }
+      nav { flex-direction: column; display: none; width: 100%; }
+      nav.active { display: flex; }
+      .hamburger { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Trendy Threads</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav id="nav-menu">
+      <div id="cart-icon" onclick="window.location.href='cart.html'" style="cursor: pointer;" aria-label="Cart">
+        🛒 <span id="cart-count">0</span>
+      </div>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="navbar">
+    <a href="new-arrivals.html">New Arrivals</a>
+    <a href="men.html">Men</a>
+    <a href="women.html">Women</a>
+    <a href="accessories.html">Accessories</a>
+  </div>
+
+  <h2 class="section-title">Women's Collection</h2>
+
+  <section class="products">
+    <div class="product">
+      <img src="floralmaxidress.jpeg" alt="Floral Maxi Dress" />
+      <h3>Floral Maxi Dress</h3>
+      <p>₹5,799</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="chic.jpeg" alt="Chic Black Dress" />
+      <h3>Chic Black Dress</h3>
+      <p>₹3,799</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="silkwraptops.jpeg" alt="Silk Wrap Top" />
+      <h3>Silk Wrap Top</h3>
+      <p>₹3,999</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="sequinpartydress.jpeg" alt="Sequin Party Dress" />
+      <h3>Sequin Party Dress</h3>
+      <p>₹7,499</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="satinmididress.jpeg" alt="Satin Midi Skirt" />
+      <h3>Satin Midi Skirt</h3>
+      <p>₹4,599</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="luxurtknitdress.jpeg" alt="Luxury Knit Dress" />
+      <h3>Luxury Knit Dress</h3>
+      <p>₹11,299</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="embroidedkurti.jpeg">
+      <h3>Embroidered Kurti</h3>
+      <p>₹2,499</p>
+      <button class="add-to-cart" data-name="Embroidered Kurti" data-price="2499">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="printedsaee.jpeg" alt="Printed Saree">
+      <h3>Printed Saree</h3>
+      <p>₹3,799</p>
+      <button class="add-to-cart" data-name="Printed Saree" data-price="3799">Add to Cart</button>
+    </div>                                                                                                                                                                                                                                                         
+    <div class="product">
+      <img src="floralmaxidress.jpeg" alt="Floral Maxi Dress" />
+      <h3>Floral Maxi Dress</h3>
+      <p>₹5,799</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="eleganttrenchcoat.jpeg" alt="Elegant Trench Coat" />
+      <h3>Elegant Trench Coat</h3>
+      <p>₹9,499</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Trendy Threads. Elegance tailored for every woman.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("active");
+    }
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function updateCartCount() {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.getElementById("cart-count").textContent = totalItems;
+    }
+
+    document.querySelectorAll(".product").forEach(card => {
+      const name = card.querySelector("h3")?.textContent.trim();
+      const priceText = card.querySelector("p")?.textContent.replace(/[₹,]/g, "").trim();
+      const price = parseInt(priceText, 10);
+      const image = card.querySelector("img")?.getAttribute("src");
+      const button = card.querySelector("button");
+
+      if (name && !isNaN(price) && image && button) {
+        button.addEventListener("click", () => {
+          const existing = cart.find(item => item.name === name);
+          if (existing) {
+            existing.quantity += 1;
+          } else {
+            cart.push({ name, price, image, quantity: 1 });
+          }
+          localStorage.setItem("cart", JSON.stringify(cart));
+          updateCartCount();
+          button.innerText = "✔ Added!";
+          button.style.backgroundColor = "#f8bbd0";
+          button.style.color = "#c2185b";
+          button.style.cursor = "default";
+          setTimeout(() => {
+            button.innerText = "Add to Cart";
+            button.style.backgroundColor = "#c2185b";
+            button.style.color = "#fff";
+            button.style.cursor = "pointer";
+          }, 1500);
+        });
+      }
+    });
+
+    updateCartCount();
+  </script>
+</body>
+</html>
