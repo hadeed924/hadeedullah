@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Arrivals - Trendy Threads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #fafafa;
+      color: #222;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #111;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #c2185b;
+    }
+
+    .search-container {
+      padding: 30px 20px 10px;
+      text-align: center;
+    }
+
+    .search-container input {
+      width: 100%;
+      max-width: 500px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .products {
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .product {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      max-height: 320px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      margin: 20px 0 10px;
+      font-size: 1.4rem;
+      color: #111;
+    }
+
+    .product p {
+      color: #666;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .product button {
+      background-color: #c2185b;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .product button:hover {
+      background-color: #ad1457;
+    }
+
+    footer {
+      background-color: #111;
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 1.6rem;
+      }
+
+      nav a {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .logo {
+        margin-bottom: 10px;
+        font-size: 1.4rem;
+      }
+
+      nav {
+        gap: 15px;
+        justify-content: flex-start;
+      }
+
+      .search-container input {
+        width: 90%;
+        font-size: 0.95rem;
+      }
+    }
+    .search-container {
+  position: sticky;
+  top: 80px;
+  background-color: #fafafa;
+  z-index: 999;
+  padding: 15px 20px;
+}
+body {
+  line-height: 1.6;
+}
+.product button {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.product button:hover {
+  transform: scale(1.05);
+}
+
+
+
+.navbar {
+      display: flex;
+      gap: 20px;
+      padding: 15px 20px;
+      background: #c2185b;
+      color: white;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">Trendy Threads</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html" style="position: relative;">
+        Cart 🛒 <span id="cart-count" style="background:#c2185b; color:white; border-radius:50%; padding:2px 8px; font-size:0.8rem; position:absolute; top:-8px; right:-16px;">0</span>
+      </a>
+    </nav>
+    
+  </header>
+
+  <div class="navbar">
+    <a href="new-arrivals.html">New Arrivals</a>
+    <a href="men.html">Men</a>
+    <a href="women.html">Women</a>
+    <a href="accessories.html">Accessories</a>
+  </div>
+
+ 
+  <section class="products">
+    <div class="product">
+      <img src="embroidedkurti.jpeg">
+      <h3>Embroidered Kurti</h3>
+      <p>₹2,499</p>
+      <button class="add-to-cart" data-name="Embroidered Kurti" data-price="2499">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="printedsaee.jpeg" alt="Printed Saree">
+      <h3>Printed Saree</h3>
+      <p>₹3,799</p>
+      <button class="add-to-cart" data-name="Printed Saree" data-price="3799">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="linenshirtarrival.jpeg" alt="Linen Shirt">
+      <h3>Linen Shirt</h3>
+      <p>₹1,899</p>
+      <button class="add-to-cart" data-name="Linen Shirt" data-price="1899">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="formalblazer.jpeg" alt="Formal Blazer">
+      <h3>Formal Blazer</h3>
+      <p>₹7,499</p>
+      <button class="add-to-cart" data-name="Formal Blazer" data-price="7499">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="woolovercoat.jpeg" alt="Wool Overcoat">
+      <h3>Wool Overcoat</h3>
+      <p>₹8,499</p>
+      <button class="add-to-cart" data-name="Wool Overcoat" data-price="8499">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="relaxedfithoodie.jpeg" alt="Relaxed Fit Hoodie">
+      <h3>Relaxed Fit Hoodie</h3>
+      <p>₹3,299</p>
+      <button class="add-to-cart" data-name="Relaxed Fit Hoodie" data-price="3299">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="slimchinos.jpeg" alt="Slim Chinos">
+      <h3>Slim Chinos</h3>
+      <p>₹2,599</p>
+      <button class="add-to-cart" data-name="Slim Chinos" data-price="2599">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="denimshirt.jpeg" alt="Denim Shirt">
+      <h3>Denim Shirt</h3>
+      <p>₹2,199</p>
+      <button class="add-to-cart" data-name="Denim Shirt" data-price="2199">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="hightopsneakers.jpeg" alt="High Top Sneakers">
+      <h3>High Top Sneakers</h3>
+      <p>₹5,499</p>
+      <button class="add-to-cart" data-name="High Top Sneakers" data-price="5499">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="tweedblazer.jpeg">
+      <h3>Tweed Blazer</h3>
+      <p>₹9,799</p>
+      <button class="add-to-cart" data-name="Tweed Blazer" data-price="9799">Add to Cart</button>
+    </div>
+   </section>
+     <footer>
+    <p>&copy; 2025 Trendy Threads. Premium looks for every occasion.</p>
+  </footer>
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("active");
+    }
+  
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
+    function updateCartCount() {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.getElementById("cart-count").textContent = totalItems;
+    }
+  
+    document.querySelectorAll(".product").forEach(card => {
+      const name = card.querySelector("h3")?.textContent.trim();
+      const priceText = card.querySelector("p")?.textContent.replace(/[₹,]/g, "").trim();
+      const price = parseInt(priceText, 10);
+      const image = card.querySelector("img")?.getAttribute("src");
+      const button = card.querySelector("button.add-to-cart");
+      const quantitySelect = card.querySelector(".quantity-select");
+  
+      if (name && !isNaN(price) && image && button) {
+        button.addEventListener("click", () => {
+          const selectedQty = quantitySelect ? parseInt(quantitySelect.value, 10) : 1;
+          const existingProduct = cart.find(item => item.name === name);
+  
+          if (existingProduct) {
+            existingProduct.quantity += selectedQty;
+          } else {
+            cart.push({ name, price, image, quantity: selectedQty });
+          }
+  
+          localStorage.setItem("cart", JSON.stringify(cart));
+          updateCartCount();
+  
+          // Theme-colored feedback
+          button.innerText = "✔ Added!";
+          button.style.backgroundColor = "#f8bbd0"; // Light pink matching theme
+          button.style.color = "#c2185b";
+          button.style.cursor = "default";
+  
+          setTimeout(() => {
+            button.innerText = "Add to Cart";
+            button.style.backgroundColor = "#c2185b";
+            button.style.color = "#fff";
+            button.style.cursor = "pointer";
+          }, 1500);
+        });
+      }
+    });
+  
+    updateCartCount();
+  </script>
+  </body>
+</html>
