@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout - Trendy Threads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Jost', sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    header {
+      background-color: #c2185b;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .back-link {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    .checkout-container {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .checkout-container h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cart-item {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border-bottom: 1px solid #eee;
+      padding: 1rem 0;
+    }
+
+    .cart-item-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cart-item img {
+      width: 100px;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .cart-item-info {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .quantity-select {
+      padding: 0.4rem;
+      border-radius: 6px;
+    }
+
+    .remove-btn {
+      background-color: #f44336;
+      color: #fff;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .subtotal {
+      font-weight: bold;
+    }
+
+    .total {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 1.5rem;
+      text-align: right;
+    }
+
+    .checkout-btn {
+      background-color: #c2185b;
+      color: #fff;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      float: right;
+      margin-top: 1rem;
+    }
+
+    .empty-message {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .cart-item-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .checkout-btn {
+        float: none;
+        width: 100%;
+        margin-top: 2rem;
+      }
+
+      .total {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Trendy Threads</div>
+    <a class="back-link" href="index.html">← Continue Shopping</a>
+  </header>
+
+  <section class="checkout-container">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div class="total" id="total-amount">Total: ₹0</div>
+    <button class="checkout-btn" onclick="proceedToPayment()">Proceed to Payment</button>
+    <p id="empty-message" class="empty-message" style="display:none;">Your cart is empty 🛒</p>
+  </section>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartItemsContainer = document.getElementById("cart-items");
+    const totalDisplay = document.getElementById("total-amount");
+    const emptyMessage = document.getElementById("empty-message");
+
+    function renderCart() {
+      cartItemsContainer.innerHTML = "";
+      let total = 0;
+
+      if (cart.length === 0) {
+        emptyMessage.style.display = "block";
+        totalDisplay.style.display = "none";
+        document.querySelector(".checkout-btn").style.display = "none";
+        return;
+      }
+
+      emptyMessage.style.display = "none";
+      totalDisplay.style.display = "block";
+      document.querySelector(".checkout-btn").style.display = "inline-block";
+
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        const itemDiv = document.createElement("div");
+        itemDiv.className = "cart-item";
+
+        itemDiv.innerHTML = `
+          <div class="cart-item-row">
+            <img src="${item.image}" alt="${item.name}">
+            <div class="cart-item-info">
+              <h4>${item.name}</h4>
+              <p>Price: ₹${item.price.toLocaleString()}</p>
+            </div>
+            <div class="cart-item-controls">
+              <select class="quantity-select" data-index="${index}">
+                ${[1,2,3,4,5].map(q => `
+                  <option value="${q}" ${item.quantity === q ? 'selected' : ''}>Qty: ${q}</option>
+                `).join("")}
+              </select>
+              <span class="subtotal">₹${itemTotal.toLocaleString()}</span>
+              <button class="remove-btn" data-index="${index}">Remove</button>
+            </div>
+          </div>
+        `;
+
+        cartItemsContainer.appendChild(itemDiv);
+      });
+
+      totalDisplay.textContent = `Total: ₹${total.toLocaleString()}`;
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    cartItemsContainer.addEventListener("change", e => {
+      if (e.target.classList.contains("quantity-select")) {
+        const index = parseInt(e.target.dataset.index, 10);
+        const newQty = parseInt(e.target.value, 10);
+        cart[index].quantity = newQty;
+        renderCart();
+      }
+    });
+
+    cartItemsContainer.addEventListener("click", e => {
+      if (e.target.classList.contains("remove-btn")) {
+        const index = parseInt(e.target.dataset.index, 10);
+        cart.splice(index, 1);
+        renderCart();
+      }
+    });
+
+    function proceedToPayment() {
+      alert("Proceeding to payment... (connect to payment gateway here)");
+      // In production: redirect to payment.html or use Razorpay/Stripe
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>
