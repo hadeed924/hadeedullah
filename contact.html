@@ -131,7 +131,7 @@
     }
 
     @media (max-width: 768px) {
-      .logo { font-size: 1.5rem; }
+      .logo a { font-size: 1.5rem; }
       nav { flex-direction: column; display: none; width: 100%; }
       nav.active { display: flex; }
       .hamburger { display: block; }
@@ -141,7 +141,6 @@
 <body>
   <header>
     <div class="logo"> <a href="index.html">Trendy Threads</a> </div>
-    
     <div class="hamburger" onclick="toggleMenu()">☰</div>
     <nav id="nav-menu">
       <div id="cart-icon" onclick="window.location.href='cart.html'" style="cursor: pointer;" aria-label="Cart">
@@ -154,18 +153,25 @@
 
   <section class="contact-container">
     <h2>Contact Us</h2>
-    <form action="https://hadeedullah2208@gmail.com" method="POST">
-        <div>
+    <form action="https://formsubmit.co/hadeedullah2208@gmail.com" method="POST">
+      <!-- Spam protection (honeypot) -->
+      <input type="text" name="_honey" style="display:none">
+      <!-- Disable CAPTCHA (optional) -->
+      <input type="hidden" name="_captcha" value="false">
+      <!-- Redirect after submit (optional) -->
+      <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+
+      <div>
         <label for="name">Name</label>
-        <input type="text" id="name" required placeholder="Your full name"/>
+        <input type="text" id="name" name="name" required placeholder="Your full name"/>
       </div>
       <div>
         <label for="email">Email</label>
-        <input type="email" id="email" required placeholder="Your email address"/>
+        <input type="email" id="email" name="email" required placeholder="Your email address"/>
       </div>
       <div>
         <label for="message">Message</label>
-        <textarea id="message" required placeholder="Write your message here..."></textarea>
+        <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
       </div>
       <button type="submit">Send Message</button>
     </form>
@@ -173,7 +179,7 @@
     <div class="contact-info">
       <p><strong>Email:</strong> hadeedullah2208@gmail.com</p>
       <p><strong>Phone:</strong> +91 9247141137</p>
-      <p><strong>Address:</strong> road no.10 Banjara Hills Hyderabad,Telangana,India</p>
+      <p><strong>Address:</strong> Road No.10, Banjara Hills, Hyderabad, Telangana, India</p>
     </div>
   </section>
 
@@ -194,12 +200,6 @@
     }
 
     updateCartCount();
-
-    function submitContactForm(event) {
-      event.preventDefault();
-      alert("Thanks for reaching out! We'll get back to you shortly.");
-      document.querySelector("form").reset();
-    }
   </script>
 </body>
 </html>
